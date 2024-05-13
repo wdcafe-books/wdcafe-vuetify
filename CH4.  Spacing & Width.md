@@ -1,0 +1,170 @@
+# CH4.  Spacing & Width
+
+  
+
+## 1\. Spacing - margin & padding
+
+###   
+
+#### 새 클래스를 만들지 않고도 레이아웃을 업데이트할 수 있습니다. 간격 도우미는 요소의 여백과 여백을 수정하는 데 유용합니다.
+
+  
+
+```
+도우미 클래스는 0에서 16 사이의 요소에 margin , padding 또는 gap을 적용합니다 . 각 크기 증가분은 일반적인 머티리얼 디자인 간격에 맞춰 설계되었습니다. 이러한 클래스는 다음 형식을 사용하여 적용할 수 있습니다 .
+
+{property}{direction}-{size}
+```
+
+  
+
+  
+
+* * *
+
+  
+
+### \[ Margin & Padding & Gap \]
+
+  
+
+The **property** applies the type of spacing:
+
+- `m` - applies `margin`
+- `p` - applies `padding`
+- `g` - applies `gap`
+
+  
+
+The **direction** designates the side the property applies to:
+
+- `t` - applies the spacing for `margin-top` and `padding-top`
+- `b` - applies the spacing for `margin-bottom` and `padding-bottom`
+- `l` - applies the spacing for `margin-left` and `padding-left`
+- `r` - applies the spacing for `margin-right`, `padding-right`, and `row-gap`
+- `s` - applies the spacing for `margin-left`/`padding-left` (in LTR mode) and `margin-right`/`padding-right` (in RTL mode)
+- `e` - applies the spacing for `margin-right`/`padding-right` (in LTR mode) and `margin-left`/`padding-left` (in RTL mode)
+- `x` - applies the spacing for margin and padding `*-left` and `*-right`
+- `y` - applies the spacing for margin and padding `*-top` and `*-bottom`
+- `a` - applies the spacing for `margin`, `padding` and `gap` in all directions
+- `c` - applies the spacing for `column-gap`
+
+  
+
+The **size** controls the increment of the property in 4px intervals:
+
+- `0` - eliminates all `margin`, `padding` or `gap` by setting it to `0`
+- `1` - sets `margin`, `padding` or `gap` to 4px
+- `2` - sets `margin`, `padding` or `gap` to 8px
+- `3` - sets `margin`, `padding` or `gap` to 12px
+- `4` - sets `margin`, `padding` or `gap` to 16px
+- `5` - sets `margin`, `padding` or `gap` to 20px
+- `6` - sets `margin`, `padding` or `gap` to 24px
+- `7` - sets `margin`, `padding` or `gap` to 28px
+- `8` - sets `margin`, `padding` or `gap` to 32px
+- `9` - sets `margin`, `padding` or `gap` to 36px
+- `10` - sets `margin`, `padding` or `gap` to 40px
+- `11` - sets `margin`, `padding` or `gap` to 44px
+- `12` - sets `margin`, `padding` or `gap` to 48px
+- `13` - sets `margin`, `padding` or `gap` to 52px
+- `14` - sets `margin`, `padding` or `gap` to 56px
+- `15` - sets `margin`, `padding` or `gap` to 60px
+- `16` - sets `margin`, `padding` or `gap` to 64px
+- `n1` - sets `margin` to -4px
+- `n2` - sets `margin` to -8px
+- `n3` - sets `margin` to -12px
+- `n4` - sets `margin` to -16px
+- `n5` - sets `margin` to -20px
+- `n6` - sets `margin` to -24px
+- `n7` - sets `margin` to -28px
+- `n8` - sets `margin` to -32px
+- `n9` - sets `margin` to -36px
+- `n10` - sets `margin` to -40px
+- `n11` - sets `margin` to -44px
+- `n12` - sets `margin` to -48px
+- `n13` - sets `margin` to -52px
+- `n14` - sets `margin` to -56px
+- `n15` - sets `margin` to -60px
+- `n16` - sets `margin` to -64px
+- `auto` - sets the spacing to **auto**
+
+**
+
+* * *
+
+**
+
+### \[ Width & Height \]
+
+  
+
+Specify the `width` property of **block level elements** with a utility class. The following classes are applied using the format `.{prefix}-{size}` ; where prefix is **w** and size is the value.
+
+  
+
+| Class | Description |
+| --- | --- |
+| **w-auto** | `width: auto` |
+| **w-0** | `width: 0` |
+| **w-25** | `width: 25%` |
+| **w-50** | `width: 50%` |
+| **w-75** | `width: 75%` |
+| **w-100** | `width: 100%` |
+
+  
+
+  
+
+Specify the `height` property of **block level elements** with a utility class. The following classes are applied using the format `.{prefix}-{size}` ; where prefix is **h** and size is the value.
+
+  
+
+| Class | Description |
+| --- | --- |
+| **h-auto** | `height: auto` |
+| **h-screen** | `height: 100dvh` |
+| **h-0** | `height: 0` |
+| **h-25** | `height: 25%` |
+| **h-50** | `height: 50%` |
+| **h-75** | `height: 75%` |
+| **h-100** | `height: 100%` |
+
+  
+
+**
+
+* * *
+
+**
+
+  
+
+- **예시 샘플 코드**
+
+```
+<template>
+  <div class="spacing">
+
+    <h1 class="text-center mb-10">Spacing & Width</h1>
+
+    <v-container>
+      <div class="v-row">
+        <div class="v-col">
+          <!-- 
+            1) 마진과 패딩 설정값을 4배수로 설정됩니다.  ex) pa-2 (padding all - 8px 설정)   
+            2) Width, Height는 클래스로 설정시 6가지만 가능합니다.  ex) w-auto, w-0, w-25, w-50, w-75, w-100
+          -->
+          <div class="border w-50 pa-2 ma-auto">Test</div>
+          <div class="border-sm w-75 pa-2 ma-auto mt-5">Test</div>
+        </div>
+      </div>
+    </v-container>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'SpacingView',
+};
+</script>
+```

@@ -1,0 +1,105 @@
+# CH5.  Display
+
+  
+
+## 1\. Device helpers.
+
+표시 도우미를 사용하면 콘텐츠 표시를 제어할 수 있습니다. 여기에는 현재 뷰포트 또는 실제 요소 표시 유형에 따라 조건부로 표시되는 것이 포함됩니다.
+
+  
+
+| Device | Code | Type | Range |
+| --- | --- | --- | --- |
+| Extra small | **xs** | Small to large phone | < 600px |
+| Small | **sm** | Small to medium tablet | 600px > < 960px |
+| Medium | **md** | Large tablet to laptop | 960px > < 1280px |
+| Large | **lg** | Laptop to desktop | 1280px > < 1920px |
+| Extra large | **xl** | 1080p to 1440p desktop | 1920px > < 2560px |
+| Extra extra large | **xxl** | 4k and ultra-wide | \> 2560px |
+| [Specification](https://material.io/design/layout/responsive-layout-grid.html) |     |     |     |
+
+  
+
+  
+
+## 2\. Display
+
+요소의 `display`속성을 지정합니다. 이러한 클래스는 `xs`에서 까지의 모든 중단점에 적용될 수 있습니다 `xxl`. 기본 클래스를 사용하면 `.d-{value}`으로 추론됩니다 `.d-xs-{value}`.
+
+  
+
+- `.d-{value}` for `xs`
+- `.d-{breakpoint}-{value}` for `sm`, `md`, `lg`, `xl`, and `xxl`
+
+The value property is one of:
+
+- `none`
+- `inline`
+- `inline-block`
+- `block`
+- `table`
+- `table-cell`
+- `table-row`
+- `flex`
+- `inline-flex`
+
+  
+
+디스플레이 도우미 클래스에 대한 특정 중단점을 설정하면 해당 지정부터 모든 화면 너비에 적용됩니다. 예를 들어 , 및 크기 화면 `d-lg-flex`에 적용됩니다 .`lg``xl``xxl`
+
+  
+
+  
+
+## 3\. Visibility
+
+  
+
+현재 **뷰포트를** 기반으로 요소를 조건부로 표시합니다 . 중단점 유틸리티 클래스는 항상 상향식으로 적용됩니다. 즉 `.d-none`, 가 있으면 모든 중단점에 적용됩니다. 단, 이상 `.d-md-none`에만 적용됩니다 `md`.
+
+  
+
+| Screen size | Class |
+| --- | --- |
+| Hidden on all | `.d-none` |
+| Hidden only on xs | `.d-none .d-sm-flex` |
+| Hidden only on sm | `.d-sm-none .d-md-flex` |
+| Hidden only on md | `.d-md-none .d-lg-flex` |
+| Hidden only on lg | `.d-lg-none .d-xl-flex` |
+| Hidden only on xl | `.d-xl-none .d-xxl-flex` |
+| Hidden only on xxl | `.d-xxl-none` |
+| Visible on all | `.d-flex` |
+| Visible only on xs | `.d-flex .d-sm-none` |
+| Visible only on sm | `.d-none .d-sm-flex .d-md-none` |
+| Visible only on md | `.d-none .d-md-flex .d-lg-none` |
+| Visible only on lg | `.d-none .d-lg-flex .d-xl-none` |
+| Visible only on xl | `.d-none .d-xl-flex .d-xxl-none` |
+| Visible only on xxl | `.d-none .d-xxl-flex` |
+
+  
+
+  
+
+* * *
+
+  
+
+## 4\. 예시 샘플(1)
+
+  
+
+- HTML
+
+```
+
+
+```
+
+  
+
+- CSS
+
+```
+
+
+```
